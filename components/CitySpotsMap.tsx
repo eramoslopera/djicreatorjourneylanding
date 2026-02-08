@@ -189,7 +189,7 @@ const CitySpotsMap: React.FC = () => {
           {!selectedSpot && (
             <div className="absolute top-6 right-6 z-10 pointer-events-none">
               <span className="text-[10px] font-bold uppercase tracking-widest text-white/30 bg-black/50 px-3 py-1 backdrop-blur-sm">
-                Click on markers to explore
+                {t.citySpots.clickToExplore}
               </span>
             </div>
           )}

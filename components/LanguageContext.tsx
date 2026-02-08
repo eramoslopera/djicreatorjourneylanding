@@ -75,6 +75,7 @@ interface Translations {
     selectCity: string;
     spotType: string;
     viewOnMaps: string;
+    clickToExplore: string;
     spots: {
       madrid: { id: string; name: string; desc: string; }[];
       barcelona: { id: string; name: string; desc: string; }[];
@@ -107,6 +108,8 @@ interface Translations {
     profileLabel: string;
     terms: string;
     button: string;
+    cities: string[];
+    profiles: string[];
   };
   videoTest: {
     title: string;
@@ -118,6 +121,7 @@ interface Translations {
     recHD: string;
     recSD: string;
     error: string;
+    retry: string;
   };
   footer: {
     brandDesc: string;
@@ -203,7 +207,7 @@ const translations: Record<Language, Translations> = {
       weekDescriptions: ['La identidad culinaria.', 'El beat urbano.', 'Perspectiva de dron.', 'Juego de luces.', 'Micro-documental.', 'Sci-fi urbano.', 'Tu obra maestra.']
     },
     citySpots: {
-      title: 'Zonas de Despegue', subtitle: 'Spots curados para máxima seguridad y creatividad.', selectCity: 'Tu Ciudad', spotType: 'Categoría', viewOnMaps: 'Navegar al Spot',
+      title: 'Zonas de Despegue', subtitle: 'Spots curados para máxima seguridad y creatividad.', selectCity: 'Tu Ciudad', spotType: 'Categoría', viewOnMaps: 'Navegar al Spot', clickToExplore: 'Haz clic para explorar',
       spots: {
         madrid: [
           { id: 'm1', name: 'Templo de Debod', desc: 'Mejor para siluetas al atardecer y reflejos en el agua.' },
@@ -275,8 +279,8 @@ const translations: Record<Language, Translations> = {
       close: "Cerrar"
     },
     showcase: { inspiration: 'Showcase', title: 'Salón de la Fama', button: 'Ver Galería Completa', card1Title: 'Selección del Jurado', card1Desc: 'Lo mejor de la semana, curado por expertos.', card2Title: 'Ranking de Creadores', card2Desc: '¿Quién domina la narrativa visual en tu ciudad?', card3Title: 'Exhibición Física', card3Desc: 'Tu obra, impresa y proyectada en la Gala Final.' },
-    registration: { label: 'Acceso', title: 'Inicia tu Legado', subtitle: 'El equipo es temporal. La visión es eterna.', nameLabel: 'Nombre de Creador', emailLabel: 'Correo Electrónico', cityLabel: 'Ciudad Base', profileLabel: 'Nivel Inicial', terms: 'Acepto desafiar mis límites.', button: 'Generar ID de Creador' },
-    videoTest: { title: 'Diagnóstico de Red', desc: 'Asegura que tu conexión soporte streaming 4K.', btnStart: 'Testear Red', btnTesting: 'Midiendo...', resultLabel: 'Ping', recLabel: 'Capacidad', recHD: 'Ready for 4K', recSD: 'Standard Quality', error: 'Sin Conexión' },
+    registration: { label: 'Acceso', title: 'Inicia tu Legado', subtitle: 'El equipo es temporal. La visión es eterna.', nameLabel: 'Nombre de Creador', emailLabel: 'Correo Electrónico', cityLabel: 'Ciudad Base', profileLabel: 'Nivel Inicial', terms: 'Acepto desafiar mis límites.', button: 'Generar ID de Creador', cities: ['Madrid', 'Barcelona', 'Valencia', 'Otra'], profiles: ['Starter', 'Narrador Visual', 'Cineasta'] },
+    videoTest: { title: 'Diagnóstico de Red', desc: 'Asegura que tu conexión soporte streaming 4K.', btnStart: 'Testear Red', btnTesting: 'Midiendo...', resultLabel: 'Ping', recLabel: 'Capacidad', recHD: 'Ready for 4K', recSD: 'Standard Quality', error: 'Sin Conexión', retry: 'Reintentar' },
     footer: { brandDesc: 'El mundo se ve diferente desde aquí.', supportTitle: 'Ayuda', legalTitle: 'Términos', socialTitle: 'Redes', copyright: '© 2025 Creator Journey.', tagline: 'Perspectiva sin límites' }
   },
   en: {
@@ -301,7 +305,7 @@ const translations: Record<Language, Translations> = {
       weekDescriptions: ['Taste the culinary soul.', 'The beat of the streets.', 'Find new perspectives.', 'Light and contrast.', 'Stories of the people.', 'The city of tomorrow.', 'The final chapter.']
     },
     citySpots: {
-      title: 'Creation Spots', subtitle: 'Recommended locations for your shoots.', selectCity: 'Select City', spotType: 'Spot Type', viewOnMaps: 'View on Google Maps',
+      title: 'Creation Spots', subtitle: 'Recommended locations for your shoots.', selectCity: 'Select City', spotType: 'Spot Type', viewOnMaps: 'View on Google Maps', clickToExplore: 'Click on markers to explore',
       spots: {
         madrid: [
           { id: 'm1', name: 'Templo de Debod', desc: 'Best for sunset silhouettes and water reflections.' },
@@ -322,8 +326,8 @@ const translations: Record<Language, Translations> = {
     },
     process: { label: 'The Process', title: 'Your Journey Starts Here', steps: [{ id: '01', title: 'Register', desc: 'Create profile and choose level.' }, { id: '02', title: 'Get the Challenge', desc: 'Receive the theme every Monday.' }, { id: '03', title: 'Upload Creation', desc: 'Share your work on SkyPixel.' }, { id: '04', title: 'Win & Connect', desc: 'Weekly prizes and exhibitions.' }] },
     showcase: { inspiration: 'Inspiration', title: 'SkyPixel Showcase', button: 'View Showcase', card1Title: 'Expert Curation', card1Desc: 'Weekly selections by renowned photographers.', card2Title: 'Global Rankings', card2Desc: 'Compete with the best visual creators worldwide.', card3Title: 'Final Exhibition', card3Desc: 'Top works will be displayed at an exclusive gala.' },
-    registration: { label: 'Union', title: 'Join the Journey', subtitle: 'Limited spots for unlimited minds.', nameLabel: 'Full Name', emailLabel: 'Email', cityLabel: 'City', profileLabel: 'Profile', terms: 'I accept terms and conditions.', button: 'Join Now' },
-    videoTest: { title: 'System Diagnostic', desc: 'Check your connection speed to ensure the best playback experience.', btnStart: 'Start Test', btnTesting: 'Analyzing...', resultLabel: 'Latency', recLabel: 'Recommended Quality', recHD: 'High Definition (1080p/4K)', recSD: 'Standard Definition (360p)', error: 'Connection Error' },
+    registration: { label: 'Union', title: 'Join the Journey', subtitle: 'Limited spots for unlimited minds.', nameLabel: 'Full Name', emailLabel: 'Email', cityLabel: 'City', profileLabel: 'Profile', terms: 'I accept terms and conditions.', button: 'Join Now', cities: ['Madrid', 'Barcelona', 'Valencia', 'Other'], profiles: ['Starter', 'Visual Storyteller', 'Filmmaker'] },
+    videoTest: { title: 'System Diagnostic', desc: 'Check your connection speed to ensure the best playback experience.', btnStart: 'Start Test', btnTesting: 'Analyzing...', resultLabel: 'Latency', recLabel: 'Recommended Quality', recHD: 'High Definition (1080p/4K)', recSD: 'Standard Definition (360p)', error: 'Connection Error', retry: 'Retry' },
     gearExchange: {
       title: 'DJI GEAR EXCHANGE',
       subtitle: 'Upgrade your gear. Confidently.',
@@ -399,7 +403,7 @@ const translations: Record<Language, Translations> = {
       weekDescriptions: ['Assaboreix l\'ànima.', 'El pols dels carrers.', 'Noves perspectives.', 'Llum i contrast.', 'Històries de la gent.', 'La ciutat del demà.', 'El capítol final.']
     },
     citySpots: {
-      title: 'Punts de Creació', subtitle: 'Localitzacions recomanades per als teus rodatges.', selectCity: 'Selecciona Ciutat', spotType: 'Tipus de Spot', viewOnMaps: 'Veure en Google Maps',
+      title: 'Punts de Creació', subtitle: 'Localitzacions recomanades per als teus rodatges.', selectCity: 'Selecciona Ciutat', spotType: 'Tipus de Spot', viewOnMaps: 'Veure en Google Maps', clickToExplore: 'Fes clic per explorar',
       spots: {
         madrid: [
           { id: 'm1', name: 'Temple de Debod', desc: 'Millor per a siluetes al capvespre i reflexos a l\'aigua.' },
@@ -420,8 +424,8 @@ const translations: Record<Language, Translations> = {
     },
     process: { label: 'El Procés', title: 'El teu Viatge Comença Així', steps: [{ id: '01', title: 'Registra\'t', desc: 'Crea el teu perfil i tria nivell.' }, { id: '02', title: 'Rep el Repte', desc: 'Cada dilluns rebràs el tema.' }, { id: '03', title: 'Puja la teua Creació', desc: 'Comparteix el teu treball a SkyPixel.' }, { id: '04', title: 'Guanya i Connecta', desc: 'Premis setmanals i exhibicions.' }] },
     showcase: { inspiration: 'Inspiració', title: 'SkyPixel Showcase', button: 'Veure el Showcase', card1Title: 'Comissariat Expert', card1Desc: 'Seleccions setmanals per fotògrafs de renom.', card2Title: 'Rànquings Globals', card2Desc: 'Competeix amb els millors creadors visuals.', card3Title: 'Exhibició Final', card3Desc: 'Els millors treballs seran exposats en una gala.' },
-    registration: { label: 'Unió', title: 'Uneix-te al Viatge', subtitle: 'Places limitades per a ments il·limitades.', nameLabel: 'Nom Complet', emailLabel: 'Email', cityLabel: 'Ciutat', profileLabel: 'Perfil', terms: 'Accepte els termes i condicions.', button: 'Unir-me Ara' },
-    videoTest: { title: 'Diagnòstic de Sistema', desc: 'Verifica la teua velocitat de connexió per assegurar la millor experiència.', btnStart: 'Iniciar Test', btnTesting: 'Analitzant...', resultLabel: 'Latència', recLabel: 'Qualitat Recomanada', recHD: 'Alta Definició (1080p/4K)', recSD: 'Definició Estàndard (360p)', error: 'Error de connexió' },
+    registration: { label: 'Unió', title: 'Uneix-te al Viatge', subtitle: 'Places limitades per a ments il·limitades.', nameLabel: 'Nom Complet', emailLabel: 'Email', cityLabel: 'Ciutat', profileLabel: 'Perfil', terms: 'Accepte els termes i condicions.', button: 'Unir-me Ara', cities: ['Madrid', 'Barcelona', 'València', 'Altra'], profiles: ['Starter', 'Narrador Visual', 'Cineasta'] },
+    videoTest: { title: 'Diagnòstic de Sistema', desc: 'Verifica la teua velocitat de connexió per assegurar la millor experiència.', btnStart: 'Iniciar Test', btnTesting: 'Analitzant...', resultLabel: 'Latència', recLabel: 'Qualitat Recomanada', recHD: 'Alta Definició (1080p/4K)', recSD: 'Definició Estàndard (360p)', error: 'Error de connexió', retry: 'Reintentar' },
     gearExchange: {
       title: 'DJI GEAR EXCHANGE',
       subtitle: 'Evoluciona el teu equip. Sense riscos.',
@@ -497,7 +501,7 @@ const translations: Record<Language, Translations> = {
       weekDescriptions: ['Assaboreix l\'ànima.', 'El pols dels carrers.', 'Noves perspectives.', 'Llum i contrast.', 'Històries de la gent.', 'La ciutat del demà.', 'El capítol final.']
     },
     citySpots: {
-      title: 'Punts de Creació', subtitle: 'Localitzacions recomanades per als teus rodatges.', selectCity: 'Selecciona Ciutat', spotType: 'Tipus de Spot', viewOnMaps: 'Veure a Google Maps',
+      title: 'Punts de Creació', subtitle: 'Localitzacions recomanades per als teus rodatges.', selectCity: 'Selecciona Ciutat', spotType: 'Tipus de Spot', viewOnMaps: 'Veure a Google Maps', clickToExplore: 'Fes clic per explorar',
       spots: {
         madrid: [
           { id: 'm1', name: 'Temple de Debod', desc: 'Millor per a siluetes al capvespre i reflexos a l\'aigua.' },
@@ -518,8 +522,8 @@ const translations: Record<Language, Translations> = {
     },
     process: { label: 'El Procés', title: 'El teu Viatge Comença Així', steps: [{ id: '01', title: 'Registra\'t', desc: 'Crea el teu perfil i tria nivell.' }, { id: '02', title: 'Rep el Repte', desc: 'Cada dilluns rebràs el tema.' }, { id: '03', title: 'Puja la teva Creació', desc: 'Comparteix el teu treball a SkyPixel.' }, { id: '04', title: 'Guanya i Connecta', desc: 'Premis setmanals i exhibicions.' }] },
     showcase: { inspiration: 'Inspiració', title: 'SkyPixel Showcase', button: 'Veure el Showcase', card1Title: 'Comissariat Expert', card1Desc: 'Seleccions setmanals per fotògrafs de renom.', card2Title: 'Rànquings Globals', card2Desc: 'Competeix amb els millors creadors visuals.', card3Title: 'Exhibició Final', card3Desc: 'Els millors treballs seran exposats en una gala.' },
-    registration: { label: 'Unió', title: 'Uneix-te al Viatge', subtitle: 'Places limitades per a ments il·limitades.', nameLabel: 'Nom Complet', emailLabel: 'Email', cityLabel: 'Ciutat', profileLabel: 'Perfil', terms: 'Accepto els termes i condicions.', button: 'Unir-me Ara' },
-    videoTest: { title: 'Diagnòstic de Sistema', desc: 'Verifica la teva velocitat de connexió per assegurar la millor experiència.', btnStart: 'Iniciar Test', btnTesting: 'Analitzant...', resultLabel: 'Latència', recLabel: 'Qualitat Recomanada', recHD: 'Alta Definició (1080p/4K)', recSD: 'Definició Estàndard (360p)', error: 'Error de connexió' },
+    registration: { label: 'Unió', title: 'Uneix-te al Viatge', subtitle: 'Places limitades per a ments il·limitades.', nameLabel: 'Nom Complet', emailLabel: 'Email', cityLabel: 'Ciutat', profileLabel: 'Perfil', terms: 'Accepto els termes i condicions.', button: 'Unir-me Ara', cities: ['Madrid', 'Barcelona', 'València', 'Altra'], profiles: ['Starter', 'Narrador Visual', 'Cineasta'] },
+    videoTest: { title: 'Diagnòstic de Sistema', desc: 'Verifica la teva velocitat de connexió per assegurar la millor experiència.', btnStart: 'Iniciar Test', btnTesting: 'Analitzant...', resultLabel: 'Latència', recLabel: 'Qualitat Recomanada', recHD: 'Alta Definició (1080p/4K)', recSD: 'Definició Estàndard (360p)', error: 'Error de connexió', retry: 'Reintentar' },
     gearExchange: {
       title: 'DJI GEAR EXCHANGE',
       subtitle: 'Evoluciona el teu equip. Sense riscos.',
@@ -595,7 +599,7 @@ const translations: Record<Language, Translations> = {
       weekDescriptions: ['Goûtez l\'âme culinaire.', 'Le pouls des rues.', 'Nouvelles perspectives.', 'Ombre et lumière.', 'Histoires des gens.', 'La ville de demain.', 'Le dernier chapitre.']
     },
     citySpots: {
-      title: 'Lieux de Création', subtitle: 'Lieux recommandés pour vos tournages.', selectCity: 'Sélectionner Ville', spotType: 'Type de Lieu', viewOnMaps: 'Voir sur Google Maps',
+      title: 'Lieux de Création', subtitle: 'Lieux recommandés pour vos tournages.', selectCity: 'Sélectionner Ville', spotType: 'Type de Lieu', viewOnMaps: 'Voir sur Google Maps', clickToExplore: 'Cliquez pour explorer',
       spots: {
         madrid: [
           { id: 'm1', name: 'Temple de Debod', desc: 'Idéal pour les silhouettes au coucher du soleil et les reflets.' },
@@ -616,8 +620,8 @@ const translations: Record<Language, Translations> = {
     },
     process: { label: 'Le Processus', title: 'Votre Voyage Commence', steps: [{ id: '01', title: 'Inscrivez-vous', desc: 'Créez votre profil et choisissez votre niveau.' }, { id: '02', title: 'Recevez le Défi', desc: 'Chaque lundi, recevez le thème.' }, { id: '03', title: 'Téléchargez', desc: 'Partagez votre travail sur SkyPixel.' }, { id: '04', title: 'Gagnez & Connectez', desc: 'Prix hebdomadaires et expositions.' }] },
     showcase: { inspiration: 'Inspiration', title: 'Vitrine SkyPixel', button: 'Voir la Vitrine', card1Title: 'Curation Experte', card1Desc: 'Sélections hebdomadaires par des photographes renommés.', card2Title: 'Classements Mondiaux', card2Desc: 'Affrontez les meilleurs créateurs visuels.', card3Title: 'Exposition Finale', card3Desc: 'Les meilleures œuvres seront exposées lors d\'un gala.' },
-    registration: { label: 'Union', title: 'Rejoignez le Voyage', subtitle: 'Places limitées pour des esprits illimités.', nameLabel: 'Nom Complet', emailLabel: 'Email', cityLabel: 'Ville', profileLabel: 'Profil', terms: 'J\'accepte les termes et conditions.', button: 'Rejoindre Maintenant' },
-    videoTest: { title: 'Diagnostic Système', desc: 'Vérifiez votre connexion pour une expérience optimale.', btnStart: 'Lancer le test', btnTesting: 'Analyse...', resultLabel: 'Latence', recLabel: 'Qualité Recommandée', recHD: 'Haute Définition (1080p/4K)', recSD: 'Définition Standard (360p)', error: 'Erreur de connexion' },
+    registration: { label: 'Union', title: 'Rejoignez le Voyage', subtitle: 'Places limitées pour des esprits illimités.', nameLabel: 'Nom Complet', emailLabel: 'Email', cityLabel: 'Ville', profileLabel: 'Profil', terms: 'J\'accepte les termes et conditions.', button: 'Rejoindre Maintenant', cities: ['Madrid', 'Barcelone', 'Valence', 'Autre'], profiles: ['Débutant', 'Conteur Visuel', 'Cinéaste'] },
+    videoTest: { title: 'Diagnostic Système', desc: 'Vérifiez votre connexion pour une expérience optimale.', btnStart: 'Lancer le test', btnTesting: 'Analyse...', resultLabel: 'Latence', recLabel: 'Qualité Recommandée', recHD: 'Haute Définition (1080p/4K)', recSD: 'Définition Standard (360p)', error: 'Erreur de connexion', retry: 'Réessayer' },
     gearExchange: {
       title: 'DJI GEAR EXCHANGE',
       subtitle: 'Upgrade your gear. Confidently.',
@@ -693,7 +697,7 @@ const translations: Record<Language, Translations> = {
       weekDescriptions: ['Die kulinarische Seele.', 'Der Puls der Straßen.', 'Neue Perspektiven.', 'Licht und Schatten.', 'Geschichten der Menschen.', 'Stadt von morgen.', 'Das letzte Kapitel.']
     },
     citySpots: {
-      title: 'Kreativorte', subtitle: 'Empfohlene Orte für Ihre Dreharbeiten.', selectCity: 'Stadt wählen', spotType: 'Ortstyp', viewOnMaps: 'Auf Google Maps ansehen',
+      title: 'Kreativorte', subtitle: 'Empfohlene Orte für Ihre Dreharbeiten.', selectCity: 'Stadt wählen', spotType: 'Ortstyp', viewOnMaps: 'Auf Google Maps ansehen', clickToExplore: 'Klicken zum Erkunden',
       spots: {
         madrid: [
           { id: 'm1', name: 'Tempel von Debod', desc: 'Beste Silhouetten bei Sonnenuntergang und Spiegelungen.' },
@@ -714,8 +718,8 @@ const translations: Record<Language, Translations> = {
     },
     process: { label: 'Der Prozess', title: 'Ihre Reise beginnt hier', steps: [{ id: '01', title: 'Registrieren', desc: 'Profil erstellen und Level wählen.' }, { id: '02', title: 'Herausforderung erhalten', desc: 'Jeden Montag ein neues Thema.' }, { id: '03', title: 'Hochladen', desc: 'Teilen Sie Ihre Arbeit auf SkyPixel.' }, { id: '04', title: 'Gewinnen & Verbinden', desc: 'Wöchentliche Preise und Ausstellungen.' }] },
     showcase: { inspiration: 'Inspiration', title: 'SkyPixel Showcase', button: 'Showcase ansehen', card1Title: 'Experten-Kuration', card1Desc: 'Wöchentliche Auswahl renommierter Fotografen.', card2Title: 'Globale Rankings', card2Desc: 'Messen Sie sich mit den besten visuellen Schöpfern.', card3Title: 'Abschlussausstellung', card3Desc: 'Die besten Werke werden auf einer Gala ausgestellt.' },
-    registration: { label: 'Union', title: 'Reise beitreten', subtitle: 'Begrenzte Plätze für unbegrenzte Köpfe.', nameLabel: 'Vollständiger Name', emailLabel: 'E-Mail', cityLabel: 'Stadt', profileLabel: 'Profil', terms: 'Ich akzeptiere die Bedingungen.', button: 'Jetzt beitreten' },
-    videoTest: { title: 'Systemdiagnose', desc: 'Überprüfen Sie Ihre Verbindung für optimale Wiedergabe.', btnStart: 'Test starten', btnTesting: 'Analysiere...', resultLabel: 'Latenz', recLabel: 'Empfohlene Qualität', recHD: 'High Definition (1080p/4K)', recSD: 'Standard Definition (360p)', error: 'Verbindungsfehler' },
+    registration: { label: 'Union', title: 'Reise beitreten', subtitle: 'Begrenzte Plätze für unbegrenzte Köpfe.', nameLabel: 'Vollständiger Name', emailLabel: 'E-Mail', cityLabel: 'Stadt', profileLabel: 'Profil', terms: 'Ich akzeptiere die Bedingungen.', button: 'Jetzt beitreten', cities: ['Madrid', 'Barcelona', 'Valencia', 'Andere'], profiles: ['Starter', 'Visueller Geschichtenerzähler', 'Filmmaker'] },
+    videoTest: { title: 'Systemdiagnose', desc: 'Überprüfen Sie Ihre Verbindung für optimale Wiedergabe.', btnStart: 'Test starten', btnTesting: 'Analysiere...', resultLabel: 'Latenz', recLabel: 'Empfohlene Qualität', recHD: 'High Definition (1080p/4K)', recSD: 'Standard Definition (360p)', error: 'Verbindungsfehler', retry: 'Wiederholen' },
     gearExchange: {
       title: 'DJI GEAR EXCHANGE',
       subtitle: 'Upgrade your gear. Confidently.',
@@ -791,7 +795,7 @@ const translations: Record<Language, Translations> = {
       weekDescriptions: ['品味烹饪灵魂。', '捕捉街道的脉搏。', '寻找新视角。', '玩转光影对比。', '记录人们的故事。', '想象明天的城市。', '旅程的最终章。']
     },
     citySpots: {
-      title: '创作地点', subtitle: '推荐的拍摄地点。', selectCity: '选择城市', spotType: '地点类型', viewOnMaps: '在 Google 地图中查看',
+      title: '创作地点', subtitle: '推荐的拍摄地点。', selectCity: '选择城市', spotType: '地点类型', viewOnMaps: '在 Google 地图中查看', clickToExplore: '点击标记以探索',
       spots: {
         madrid: [
           { id: 'm1', name: '德波神庙', desc: '适合日落剪影和水面倒影。' },
@@ -812,8 +816,8 @@ const translations: Record<Language, Translations> = {
     },
     process: { label: '过程', title: '您的旅程从这里开始', steps: [{ id: '01', title: '注册', desc: '创建个人资料并选择等级。' }, { id: '02', title: '接受挑战', desc: '每周一接收主题。' }, { id: '03', title: '上传作品', desc: '在SkyPixel上分享您的作品。' }, { id: '04', title: '赢取与连接', desc: '每周奖品和展览。' }] },
     showcase: { inspiration: '灵感', title: 'SkyPixel展示', button: '查看展示', card1Title: '专家策展', card1Desc: '由知名摄影师每周精选。', card2Title: '全球排名', card2Desc: '与全球最佳视觉创作者一较高下。', card3Title: '最终展览', card3Desc: '优秀作品将在独家晚会上展出。' },
-    registration: { label: '联合', title: '加入旅程', subtitle: '名额有限，思维无限。', nameLabel: '全名', emailLabel: '电子邮件', cityLabel: '城市', profileLabel: '个人资料', terms: '我接受条款和条件。', button: '立即加入' },
-    videoTest: { title: '系统诊断', desc: '检查您的连接速度以确保最佳播放体验。', btnStart: '开始测试', btnTesting: '分析中...', resultLabel: '延迟', recLabel: '推荐画质', recHD: '高清 (1080p/4K)', recSD: '标清 (360p)', error: '连接错误' },
+    registration: { label: '联合', title: '加入旅程', subtitle: '名额有限，思维无限。', nameLabel: '全名', emailLabel: '电子邮件', cityLabel: '城市', profileLabel: '个人资料', terms: '我接受条款和条件。', button: '立即加入', cities: ['马德里', '巴塞罗那', '瓦伦西亚', '其他'], profiles: ['初学者', '视觉讲述者', '电影制作人'] },
+    videoTest: { title: '系统诊断', desc: '检查您的连接速度以确保最佳播放体验。', btnStart: '开始测试', btnTesting: '分析中...', resultLabel: '延迟', recLabel: '推荐画质', recHD: '高清 (1080p/4K)', recSD: '标清 (360p)', error: '连接错误', retry: '重试' },
     gearExchange: {
       title: 'DJI 装备交换',
       subtitle: '升级您的装备。自信无忧。',

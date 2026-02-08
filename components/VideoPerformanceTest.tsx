@@ -121,7 +121,7 @@ const VideoPerformanceTest: React.FC = () => {
                                         onClick={startTest}
                                         className="mt-2 text-[9px] font-bold uppercase tracking-widest text-white/40 hover:text-white"
                                     >
-                                        Retry
+                                        {t.videoTest.retry}
                                     </button>
                                 </div>
                             )}

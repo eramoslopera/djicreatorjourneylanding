@@ -43,18 +43,17 @@ const RegistrationForm: React.FC = () => {
                                 <div className="group">
                                     <label className="block text-[10px] font-bold uppercase tracking-widest text-white/40 mb-2 group-focus-within:text-dji-blue transition-colors">{t.registration.cityLabel}</label>
                                     <select className="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-dji-blue transition-all [&>option]:bg-obsidian">
-                                        <option>Madrid</option>
-                                        <option>Barcelona</option>
-                                        <option>Valencia</option>
-                                        <option>Otra</option>
+                                        {t.registration.cities.map((city, index) => (
+                                            <option key={index} value={city}>{city}</option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div className="group">
                                     <label className="block text-[10px] font-bold uppercase tracking-widest text-white/40 mb-2 group-focus-within:text-dji-blue transition-colors">{t.registration.profileLabel}</label>
                                     <select className="w-full bg-transparent border-b border-white/20 py-3 text-white focus:outline-none focus:border-dji-blue transition-all [&>option]:bg-obsidian">
-                                        <option>Starter</option>
-                                        <option>Narrador Visual</option>
-                                        <option>Cineasta</option>
+                                        {t.registration.profiles.map((profile, index) => (
+                                            <option key={index} value={profile}>{profile}</option>
+                                        ))}
                                     </select>
                                 </div>
                             </div>
