@@ -146,7 +146,7 @@ const CitySpotsMap: React.FC = () => {
                   : 'border-white/10 text-white/50 hover:text-white hover:border-white/30'
                   }`}
               >
-                {city}
+                {t.citySpots.cityNames[city]}
               </button>
             ))}
           </div>

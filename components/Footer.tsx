@@ -28,17 +28,17 @@ const Footer: React.FC = () => {
                         <div>
                             <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30 mb-6">{t.footer.supportTitle}</h4>
                             <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-white/70">
-                                <li><a href="#" className="hover:text-dji-blue transition-colors">FAQ</a></li>
-                                <li><a href="#" className="hover:text-dji-blue transition-colors">Contacto</a></li>
-                                <li><a href="#" className="hover:text-dji-blue transition-colors">Foro</a></li>
+                                <li><a href="#" className="hover:text-dji-blue transition-colors">{t.footer.links.faq}</a></li>
+                                <li><a href="#" className="hover:text-dji-blue transition-colors">{t.footer.links.contact}</a></li>
+                                <li><a href="#" className="hover:text-dji-blue transition-colors">{t.footer.links.forum}</a></li>
                             </ul>
                         </div>
                         <div>
                             <h4 className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/30 mb-6">{t.footer.legalTitle}</h4>
                             <ul className="space-y-4 text-xs font-bold uppercase tracking-widest text-white/70">
-                                <li><a href="#" className="hover:text-dji-blue transition-colors">Privacidad</a></li>
-                                <li><a href="#" className="hover:text-dji-blue transition-colors">Términos</a></li>
-                                <li><a href="#" className="hover:text-dji-blue transition-colors">Cookies</a></li>
+                                <li><a href="#" className="hover:text-dji-blue transition-colors">{t.footer.links.privacy}</a></li>
+                                <li><a href="#" className="hover:text-dji-blue transition-colors">{t.footer.links.terms}</a></li>
+                                <li><a href="#" className="hover:text-dji-blue transition-colors">{t.footer.links.cookies}</a></li>
                             </ul>
                         </div>
                         <div>

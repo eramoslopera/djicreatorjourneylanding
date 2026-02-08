@@ -76,6 +76,11 @@ interface Translations {
     spotType: string;
     viewOnMaps: string;
     clickToExplore: string;
+    cityNames: {
+      madrid: string;
+      barcelona: string;
+      valencia: string;
+    };
     spots: {
       madrid: { id: string; name: string; desc: string; }[];
       barcelona: { id: string; name: string; desc: string; }[];
@@ -130,6 +135,14 @@ interface Translations {
     socialTitle: string;
     copyright: string;
     tagline: string;
+    links: {
+      faq: string;
+      contact: string;
+      forum: string;
+      privacy: string;
+      terms: string;
+      cookies: string;
+    };
   };
   gearExchange: {
     title: string;
@@ -208,6 +221,7 @@ const translations: Record<Language, Translations> = {
     },
     citySpots: {
       title: 'Zonas de Despegue', subtitle: 'Spots curados para máxima seguridad y creatividad.', selectCity: 'Tu Ciudad', spotType: 'Categoría', viewOnMaps: 'Navegar al Spot', clickToExplore: 'Haz clic para explorar',
+      cityNames: { madrid: 'Madrid', barcelona: 'Barcelona', valencia: 'Valencia' },
       spots: {
         madrid: [
           { id: 'm1', name: 'Templo de Debod', desc: 'Mejor para siluetas al atardecer y reflejos en el agua.' },
@@ -281,7 +295,10 @@ const translations: Record<Language, Translations> = {
     showcase: { inspiration: 'Showcase', title: 'Salón de la Fama', button: 'Ver Galería Completa', card1Title: 'Selección del Jurado', card1Desc: 'Lo mejor de la semana, curado por expertos.', card2Title: 'Ranking de Creadores', card2Desc: '¿Quién domina la narrativa visual en tu ciudad?', card3Title: 'Exhibición Física', card3Desc: 'Tu obra, impresa y proyectada en la Gala Final.' },
     registration: { label: 'Acceso', title: 'Inicia tu Legado', subtitle: 'El equipo es temporal. La visión es eterna.', nameLabel: 'Nombre de Creador', emailLabel: 'Correo Electrónico', cityLabel: 'Ciudad Base', profileLabel: 'Nivel Inicial', terms: 'Acepto desafiar mis límites.', button: 'Generar ID de Creador', cities: ['Madrid', 'Barcelona', 'Valencia', 'Otra'], profiles: ['Starter', 'Narrador Visual', 'Cineasta'] },
     videoTest: { title: 'Diagnóstico de Red', desc: 'Asegura que tu conexión soporte streaming 4K.', btnStart: 'Testear Red', btnTesting: 'Midiendo...', resultLabel: 'Ping', recLabel: 'Capacidad', recHD: 'Ready for 4K', recSD: 'Standard Quality', error: 'Sin Conexión', retry: 'Reintentar' },
-    footer: { brandDesc: 'El mundo se ve diferente desde aquí.', supportTitle: 'Ayuda', legalTitle: 'Términos', socialTitle: 'Redes', copyright: '© 2025 Creator Journey.', tagline: 'Perspectiva sin límites' }
+    footer: {
+      brandDesc: 'El mundo se ve diferente desde aquí.', supportTitle: 'Ayuda', legalTitle: 'Términos', socialTitle: 'Redes', copyright: '© 2025 Creator Journey.', tagline: 'Perspectiva sin límites',
+      links: { faq: 'FAQ', contact: 'Contacto', forum: 'Foro', privacy: 'Privacidad', terms: 'Términos', cookies: 'Cookies' }
+    }
   },
   en: {
     nav: { season: 'Season 1', howWorks: 'How it Works', challenges: 'Challenges', skypixel: 'SkyPixel', register: 'Register', join: 'Join' },
@@ -306,6 +323,7 @@ const translations: Record<Language, Translations> = {
     },
     citySpots: {
       title: 'Creation Spots', subtitle: 'Recommended locations for your shoots.', selectCity: 'Select City', spotType: 'Spot Type', viewOnMaps: 'View on Google Maps', clickToExplore: 'Click on markers to explore',
+      cityNames: { madrid: 'Madrid', barcelona: 'Barcelona', valencia: 'Valencia' },
       spots: {
         madrid: [
           { id: 'm1', name: 'Templo de Debod', desc: 'Best for sunset silhouettes and water reflections.' },
@@ -379,7 +397,10 @@ const translations: Record<Language, Translations> = {
       startRoute: "Start Route",
       close: "Close"
     },
-    footer: { brandDesc: 'Driving creativity from sky and earth.', supportTitle: 'Support', legalTitle: 'Legal', socialTitle: 'Social', copyright: '© 2024 Creator Journey.', tagline: 'Designed for visionaries' }
+    footer: {
+      brandDesc: 'Driving creativity from sky and earth.', supportTitle: 'Support', legalTitle: 'Legal', socialTitle: 'Social', copyright: '© 2024 Creator Journey.', tagline: 'Designed for visionaries',
+      links: { faq: 'FAQ', contact: 'Contact', forum: 'Forum', privacy: 'Privacy', terms: 'Terms', cookies: 'Cookies' }
+    }
   },
   va: {
     nav: { season: 'Temporada 1', howWorks: 'Com funciona', challenges: 'Reptes', skypixel: 'SkyPixel', register: 'Registre', join: 'Uneix-te' },
@@ -404,6 +425,7 @@ const translations: Record<Language, Translations> = {
     },
     citySpots: {
       title: 'Punts de Creació', subtitle: 'Localitzacions recomanades per als teus rodatges.', selectCity: 'Selecciona Ciutat', spotType: 'Tipus de Spot', viewOnMaps: 'Veure en Google Maps', clickToExplore: 'Fes clic per explorar',
+      cityNames: { madrid: 'Madrid', barcelona: 'Barcelona', valencia: 'València' },
       spots: {
         madrid: [
           { id: 'm1', name: 'Temple de Debod', desc: 'Millor per a siluetes al capvespre i reflexos a l\'aigua.' },
@@ -477,7 +499,10 @@ const translations: Record<Language, Translations> = {
       startRoute: "Iniciar Ruta",
       close: "Tancar"
     },
-    footer: { brandDesc: 'Impulsant la creativitat des del cel i la terra.', supportTitle: 'Suport', legalTitle: 'Legal', socialTitle: 'Social', copyright: '© 2024 Creator Journey.', tagline: 'Dissenyat per a visionaris' }
+    footer: {
+      brandDesc: 'Impulsant la creativitat des del cel i la terra.', supportTitle: 'Suport', legalTitle: 'Legal', socialTitle: 'Social', copyright: '© 2024 Creator Journey.', tagline: 'Dissenyat per a visionaris',
+      links: { faq: 'FAQ', contact: 'Contacte', forum: 'Fòrum', privacy: 'Privacitat', terms: 'Termes', cookies: 'Cookies' }
+    }
   },
   ca: {
     nav: { season: 'Temporada 1', howWorks: 'Com funciona', challenges: 'Reptes', skypixel: 'SkyPixel', register: 'Registre', join: 'Uneix-te' },
@@ -502,6 +527,7 @@ const translations: Record<Language, Translations> = {
     },
     citySpots: {
       title: 'Punts de Creació', subtitle: 'Localitzacions recomanades per als teus rodatges.', selectCity: 'Selecciona Ciutat', spotType: 'Tipus de Spot', viewOnMaps: 'Veure a Google Maps', clickToExplore: 'Fes clic per explorar',
+      cityNames: { madrid: 'Madrid', barcelona: 'Barcelona', valencia: 'València' },
       spots: {
         madrid: [
           { id: 'm1', name: 'Temple de Debod', desc: 'Millor per a siluetes al capvespre i reflexos a l\'aigua.' },
@@ -575,7 +601,10 @@ const translations: Record<Language, Translations> = {
       startRoute: "Iniciar Ruta",
       close: "Tancar"
     },
-    footer: { brandDesc: 'Impulsant la creativitat des del cel i la terra.', supportTitle: 'Suport', legalTitle: 'Legal', socialTitle: 'Social', copyright: '© 2024 Creator Journey.', tagline: 'Dissenyat per a visionaris' }
+    footer: {
+      brandDesc: 'Impulsant la creativitat des del cel i la terra.', supportTitle: 'Suport', legalTitle: 'Legal', socialTitle: 'Social', copyright: '© 2024 Creator Journey.', tagline: 'Dissenyat per a visionaris',
+      links: { faq: 'FAQ', contact: 'Contacte', forum: 'Fòrum', privacy: 'Privacitat', terms: 'Termes', cookies: 'Cookies' }
+    }
   },
   fr: {
     nav: { season: 'Saison 1', howWorks: 'Comment ça marche', challenges: 'Défis', skypixel: 'SkyPixel', register: 'S\'inscrire', join: 'Rejoindre' },
@@ -600,6 +629,7 @@ const translations: Record<Language, Translations> = {
     },
     citySpots: {
       title: 'Lieux de Création', subtitle: 'Lieux recommandés pour vos tournages.', selectCity: 'Sélectionner Ville', spotType: 'Type de Lieu', viewOnMaps: 'Voir sur Google Maps', clickToExplore: 'Cliquez pour explorer',
+      cityNames: { madrid: 'Madrid', barcelona: 'Barcelone', valencia: 'Valence' },
       spots: {
         madrid: [
           { id: 'm1', name: 'Temple de Debod', desc: 'Idéal pour les silhouettes au coucher du soleil et les reflets.' },
@@ -673,7 +703,10 @@ const translations: Record<Language, Translations> = {
       startRoute: "Commencer la Route",
       close: "Fermer"
     },
-    footer: { brandDesc: 'Stimuler la créativité du ciel et de la terre.', supportTitle: 'Support', legalTitle: 'Légal', socialTitle: 'Social', copyright: '© 2024 Creator Journey.', tagline: 'Conçu pour les visionnaires' }
+    footer: {
+      brandDesc: 'Stimuler la créativité du ciel et de la terre.', supportTitle: 'Support', legalTitle: 'Légal', socialTitle: 'Social', copyright: '© 2024 Creator Journey.', tagline: 'Conçu pour les visionnaires',
+      links: { faq: 'FAQ', contact: 'Contact', forum: 'Forum', privacy: 'Confidentialité', terms: 'Conditions', cookies: 'Cookies' }
+    }
   },
   de: {
     nav: { season: 'Staffel 1', howWorks: 'Wie es funktioniert', challenges: 'Herausforderungen', skypixel: 'SkyPixel', register: 'Registrieren', join: 'Beitreten' },
@@ -698,6 +731,7 @@ const translations: Record<Language, Translations> = {
     },
     citySpots: {
       title: 'Kreativorte', subtitle: 'Empfohlene Orte für Ihre Dreharbeiten.', selectCity: 'Stadt wählen', spotType: 'Ortstyp', viewOnMaps: 'Auf Google Maps ansehen', clickToExplore: 'Klicken zum Erkunden',
+      cityNames: { madrid: 'Madrid', barcelona: 'Barcelona', valencia: 'Valencia' },
       spots: {
         madrid: [
           { id: 'm1', name: 'Tempel von Debod', desc: 'Beste Silhouetten bei Sonnenuntergang und Spiegelungen.' },
@@ -771,7 +805,10 @@ const translations: Record<Language, Translations> = {
       startRoute: "Route Starten",
       close: "Schließen"
     },
-    footer: { brandDesc: 'Förderung der Kreativität von Himmel und Erde.', supportTitle: 'Support', legalTitle: 'Rechtliches', socialTitle: 'Sozial', copyright: '© 2024 Creator Journey.', tagline: 'Entwickelt für Visionäre' }
+    footer: {
+      brandDesc: 'Förderung der Kreativität von Himmel und Erde.', supportTitle: 'Support', legalTitle: 'Rechtliches', socialTitle: 'Sozial', copyright: '© 2024 Creator Journey.', tagline: 'Entwickelt für Visionäre',
+      links: { faq: 'FAQ', contact: 'Kontakt', forum: 'Forum', privacy: 'Datenschutz', terms: 'AGB', cookies: 'Cookies' }
+    }
   },
   zh: {
     nav: { season: '第一季', howWorks: '运作方式', challenges: '挑战', skypixel: 'SkyPixel', register: '注册', join: '加入' },
@@ -779,9 +816,9 @@ const translations: Record<Language, Translations> = {
     manifesto: { label: '宣言', title: '这是什么', subtitle: '一项旨在改变您的创意视野的举措。', card1Title: '每月挑战', card1Desc: '旨在突破您极限的创意挑战。', card2Title: '适应性等级', card2Desc: '从初学者到电影专业人士。', card3Title: '全球社区', card3Desc: '与其他创作者联系并分享您的独特视野。' },
     creativeRoutes: {
       bgText: '选择', title: '选择您的创意路线', subtitle: '您的入门取决于意图，而不是装备。',
-      card1Label: '01 / Starter', card1Title: '城市探险家', card1Desc: '适合捕捉自发时刻的人。', card1Button: '查看我的路线', card1Equipment: '智能手机 / Pocket / Neo / Mini',
-      card2Label: '02 / Popular', card2Title: '视觉讲故事者', card2Desc: '适合经验丰富的创作者。', card2Button: '查看我的路线', card2Equipment: '无反相机 / Ronin / Mavic / Air',
-      card3Label: '03 / Pro', card3Title: '电影制作人', card3Desc: '高水平制作。', card3Button: '查看我的路线'
+      card1Label: '01 / 初学者', card1Title: '城市探险家', card1Desc: '适合捕捉自发时刻的人。', card1Button: '查看我的路线', card1Equipment: '智能手机 / Pocket / Neo / Mini',
+      card2Label: '02 / 热门', card2Title: '视觉讲故事者', card2Desc: '适合经验丰富的创作者。', card2Button: '查看我的路线', card2Equipment: '无反相机 / Ronin / Mavic / Air',
+      card3Label: '03 / 专业', card3Title: '电影制作人', card3Desc: '高水平制作。', card3Button: '查看我的路线'
     },
     seasonMap: {
       title: '赛季地图',
@@ -796,6 +833,7 @@ const translations: Record<Language, Translations> = {
     },
     citySpots: {
       title: '创作地点', subtitle: '推荐的拍摄地点。', selectCity: '选择城市', spotType: '地点类型', viewOnMaps: '在 Google 地图中查看', clickToExplore: '点击标记以探索',
+      cityNames: { madrid: '马德里', barcelona: '巴塞罗那', valencia: '瓦伦西亚' },
       spots: {
         madrid: [
           { id: 'm1', name: '德波神庙', desc: '适合日落剪影和水面倒影。' },
@@ -869,7 +907,10 @@ const translations: Record<Language, Translations> = {
       startRoute: "开始路线",
       close: "关闭"
     },
-    footer: { brandDesc: '从天空和大地推动创造力。', supportTitle: '支持', legalTitle: '法律', socialTitle: '社交', copyright: '© 2024 Creator Journey.', tagline: '专为有远见的人设计' }
+    footer: {
+      brandDesc: '从天空和大地推动创造力。', supportTitle: '支持', legalTitle: '法律', socialTitle: '社交', copyright: '© 2024 Creator Journey.', tagline: '专为有远见的人设计',
+      links: { faq: '常见问题', contact: '联系方式', forum: '论坛', privacy: '隐私政策', terms: '服务条款', cookies: 'Cookies' }
+    }
   }
 };
 
